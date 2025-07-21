@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Thymeleaf bmiの計算結果表示</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<ul th:object="${result}">
+		<li>身長：<span th:text="*{height}"></span></li>
+		<li>体重：<span th:text="*{weight}"></span></li>
+		<li>BMI値：<span th:text="*{bmi}"></span></li>
+		<li>判定結果：<span th:text="*{rank}"></span></li>
+	</ul>
+	<ul>
+		<li>身長：<span th:text="${result.height}"></span></li>
+		<li>体重：<span th:text="${result.weight}"></span></li>
+		<li>BMI値：<span th:text="${result.bmi}"></span></li>
+		<li>判定結果：<span th:text="${result.rank}"></span></li>
+	</ul>
+	<ul>
+		<li th:text="|身長：${result.height}|"></li>
+		<li th:text="|体重：${result.weight}|"></li>
+		<li th:text="|BMI値：${result.bmi}|"></li>
+		<li th:text="|判定結果：${result.rank}|"></li>
+	</ul>
+</body>
+
+</html>
