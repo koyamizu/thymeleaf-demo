@@ -11,7 +11,7 @@ import com.example.demo.form.PhysicalExaminationForm;
 import com.example.demo.helper.PhysicalExaminationConverter;
 
 @Controller
-@RequestMapping("/chap06")
+@RequestMapping("/physical-examination")
 public class PhysicalExaminationController {
 	
 	@GetMapping("form")
@@ -20,11 +20,10 @@ public class PhysicalExaminationController {
 		return "demo/exam-form";
 	}
 
-	@PostMapping("BmiServlet")
+	@PostMapping("result")
 	public String showBmiResult(PhysicalExaminationForm form, Model model) {
 		PhysicalExamination result = PhysicalExaminationConverter.convertPhysicalExaminationEntity(form);
 		model.addAttribute("result", result);
 		return "demo/bmi-result";
 	}
-
 }
